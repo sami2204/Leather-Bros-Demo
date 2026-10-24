@@ -1,0 +1,3428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#201b17">
+  <meta name="description" content="Leather Bros — handcrafted footwear, considered design and bespoke shoemaking in Dhaka, Bangladesh.">
+  <title>Leather Bros — Crafted to Fit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #201b17;
+      --ink-soft: #332b24;
+      --paper: #f6f2ec;
+      --paper-dark: #eae1d5;
+      --white: #fffdf9;
+      --gold: #a77d4c;
+      --gold-light: #d8b889;
+      --muted: #82786d;
+      --line: #ded4c8;
+      --danger: #9d3f35;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --container: 1320px;
+      --shadow: 0 24px 70px rgba(32, 27, 23, .12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    body.locked {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 64px));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .23em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 26px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    .display {
+      margin: 14px 0 18px;
+      font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 70px);
+      font-weight: 400;
+      letter-spacing: -.045em;
+      line-height: 1.08;
+    }
+
+    .section-title {
+      margin: 10px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(30px, 3vw, 46px);
+      font-weight: 400;
+      letter-spacing: -.035em;
+      line-height: 1.15;
+    }
+
+    .section-copy {
+      max-width: 560px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      border: 1px solid var(--ink);
+      border-radius: 0;
+      padding: 12px 20px;
+      background: var(--ink);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      transition: background .2s, color .2s, border-color .2s, transform .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .btn-outline:hover {
+      color: var(--white);
+    }
+
+    .btn-light {
+      background: var(--white);
+      border-color: var(--white);
+      color: var(--ink);
+    }
+
+    .btn-light:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      color: var(--ink);
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 4px;
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .text-link:hover {
+      color: var(--gold);
+    }
+
+    .icon {
+      display: inline-flex;
+      width: 20px;
+      height: 20px;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .announcement {
+      min-height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 16px;
+      background: var(--ink);
+      color: #f4e9dc;
+      font-size: 9px;
+      letter-spacing: .17em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 40;
+      top: 0;
+      background: rgba(246, 242, 236, .96);
+      border-bottom: 1px solid rgba(32, 27, 23, .11);
+      backdrop-filter: blur(16px);
+    }
+
+    .header-main {
+      min-height: 82px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 1px;
+    }
+
+    .brand-name {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: .015em;
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      color: var(--muted);
+      font-size: 8px;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    .header-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-caption {
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: .17em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 17px;
+    }
+
+    .icon-btn {
+      position: relative;
+      display: inline-flex;
+      width: 34px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      padding: 5px;
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .icon-btn:hover {
+      color: var(--gold);
+    }
+
+    .count {
+      position: absolute;
+      top: -2px;
+      right: -4px;
+      display: grid;
+      min-width: 17px;
+      height: 17px;
+      place-items: center;
+      border-radius: 50%;
+      padding: 0 4px;
+      background: var(--gold);
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    .desktop-nav {
+      display: flex;
+      min-height: 43px;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(22px, 4vw, 53px);
+      border-top: 1px solid rgba(32, 27, 23, .08);
+    }
+
+    .desktop-nav a,
+    .mobile-nav a {
+      position: relative;
+      padding: 13px 0;
+      color: #534a40;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .desktop-nav a::after {
+      position: absolute;
+      right: 0;
+      bottom: 5px;
+      left: 0;
+      height: 1px;
+      transform: scaleX(0);
+      transform-origin: left;
+      background: var(--gold);
+      content: "";
+      transition: transform .2s;
+    }
+
+    .desktop-nav a:hover::after,
+    .desktop-nav a.active::after {
+      transform: scaleX(1);
+    }
+
+    .mobile-menu-button,
+    .mobile-nav {
+      display: none;
+    }
+
+    #app {
+      min-height: 65vh;
+      animation: fade-in .28s ease;
+    }
+
+    @keyframes fade-in {
+      from { opacity: .45; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero {
+      position: relative;
+      min-height: min(760px, 78vh);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #211b16;
+      color: var(--white);
+    }
+
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(20, 16, 13, .92) 0%, rgba(20, 16, 13, .76) 40%, rgba(20, 16, 13, .24) 100%),
+        url("https://images.unsplash.com/photo-1563434194539-fcc823f9bf92?auto=format&fit=crop&w=2200&q=88") center 48% / cover;
+      content: "";
+      transform: scale(1.02);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding-block: 90px;
+    }
+
+    .hero .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .hero .display {
+      max-width: 660px;
+      margin-top: 24px;
+      font-size: clamp(45px, 7vw, 94px);
+      line-height: 1.02;
+    }
+
+    .hero .display em {
+      color: var(--gold-light);
+      font-weight: 400;
+    }
+
+    .hero-copy {
+      max-width: 460px;
+      margin: 22px 0 30px;
+      color: rgba(255, 253, 249, .74);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 48px;
+      color: rgba(255, 253, 249, .72);
+      font-size: 10px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .hero-note span:first-child {
+      width: 34px;
+      height: 1px;
+      background: var(--gold-light);
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid var(--line);
+      background: #ede5da;
+    }
+
+    .trust-item {
+      display: flex;
+      min-height: 90px;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      padding: 16px;
+      border-right: 1px solid var(--line);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-item .icon {
+      width: 25px;
+      height: 25px;
+      color: var(--gold);
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .trust-item small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .section {
+      padding-block: 94px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .category-card {
+      position: relative;
+      min-height: 365px;
+      display: flex;
+      align-items: end;
+      overflow: hidden;
+      background: var(--ink-soft);
+      color: white;
+    }
+
+    .category-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .65s cubic-bezier(.2, .65, .25, 1);
+    }
+
+    .category-card::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(22, 18, 15, .88), rgba(22, 18, 15, .04) 73%);
+      content: "";
+    }
+
+    .category-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .category-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 25px;
+    }
+
+    .category-content small {
+      color: var(--gold-light);
+      font-size: 9px;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .category-content h3 {
+      margin: 7px 0 9px;
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .category-content .text-link {
+      border-color: var(--gold-light);
+      color: white;
+      font-size: 9px;
+    }
+
+    .featured-section {
+      background: var(--white);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 28px 18px;
+    }
+
+    .product-card {
+      min-width: 0;
+    }
+
+    .product-image-wrap {
+      position: relative;
+      aspect-ratio: 4 / 4.8;
+      overflow: hidden;
+      background: #e9e0d4;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .55s cubic-bezier(.2, .65, .25, 1);
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(1.045);
+    }
+
+    .product-heart {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 253, 249, .91);
+      color: var(--ink);
+    }
+
+    .product-heart.saved {
+      color: #9c4036;
+    }
+
+    .product-heart .icon {
+      width: 17px;
+      height: 17px;
+    }
+
+    .product-action {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 10px;
+      transform: translateY(100%);
+      background: rgba(32, 27, 23, .95);
+      color: white;
+      text-align: center;
+      transition: transform .25s;
+    }
+
+    .product-card:hover .product-action,
+    .product-card:focus-within .product-action {
+      transform: translateY(0);
+    }
+
+    .product-action button {
+      display: inline-flex;
+      width: 100%;
+      min-height: 38px;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .product-info {
+      padding-top: 14px;
+    }
+
+    .product-category {
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .product-name {
+      display: block;
+      width: fit-content;
+      margin-top: 5px;
+      font-family: var(--serif);
+      font-size: 19px;
+      line-height: 1.3;
+    }
+
+    .product-name:hover {
+      color: var(--gold);
+    }
+
+    .product-blurb {
+      margin: 7px 0 11px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .product-price {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .product-price small {
+      margin-left: 5px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 400;
+    }
+
+    .center-action {
+      display: flex;
+      justify-content: center;
+      margin-top: 42px;
+    }
+
+    .editorial {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 570px;
+      background: #e9e0d5;
+    }
+
+    .editorial-image {
+      min-height: 480px;
+      overflow: hidden;
+      background: #ddd0c1;
+    }
+
+    .editorial-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .editorial-content {
+      display: flex;
+      align-items: center;
+      padding: clamp(35px, 7vw, 105px);
+    }
+
+    .editorial-content .display {
+      font-size: clamp(38px, 4vw, 57px);
+    }
+
+    .editorial-content p {
+      max-width: 480px;
+      color: #695f53;
+      line-height: 2;
+    }
+
+    .story-list {
+      display: grid;
+      gap: 18px;
+      margin: 26px 0 32px;
+    }
+
+    .story-item {
+      display: flex;
+      gap: 13px;
+      align-items: start;
+    }
+
+    .story-item .icon {
+      width: 19px;
+      height: 19px;
+      margin-top: 2px;
+      color: var(--gold);
+    }
+
+    .story-item strong {
+      display: block;
+      font-size: 11px;
+      letter-spacing: .05em;
+    }
+
+    .story-item span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .bespoke-banner {
+      position: relative;
+      overflow: hidden;
+      padding-block: 90px;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .bespoke-banner::after {
+      position: absolute;
+      top: -90px;
+      right: 3%;
+      width: 460px;
+      height: 460px;
+      border: 1px solid rgba(216, 184, 137, .25);
+      border-radius: 50%;
+      box-shadow: 0 0 0 50px rgba(216, 184, 137, .035), 0 0 0 100px rgba(216, 184, 137, .025);
+      content: "";
+    }
+
+    .bespoke-banner .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .bespoke-banner .section-copy {
+      color: rgba(255, 253, 249, .65);
+    }
+
+    .bespoke-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .bespoke-inner > div:first-child {
+      max-width: 700px;
+    }
+
+    .bespoke-inner .section-title {
+      font-size: clamp(37px, 5vw, 61px);
+    }
+
+    .page-hero {
+      padding-block: 65px;
+      background: #eae1d5;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .breadcrumbs a:hover {
+      color: var(--gold);
+    }
+
+    .page-hero .display {
+      max-width: 760px;
+      margin-top: 22px;
+      font-size: clamp(39px, 5vw, 64px);
+    }
+
+    .page-hero p {
+      max-width: 640px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .catalog-section {
+      padding-block: 48px 100px;
+    }
+
+    .catalog-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .search-field {
+      display: flex;
+      width: min(340px, 100%);
+      min-height: 45px;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--line);
+      padding: 0 13px;
+      background: var(--white);
+    }
+
+    .search-field .icon {
+      width: 18px;
+      height: 18px;
+      color: var(--muted);
+    }
+
+    .search-field input {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--ink);
+      font-size: 12px;
+    }
+
+    .catalog-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .select-field {
+      min-height: 45px;
+      border: 1px solid var(--line);
+      padding: 0 12px;
+      background: var(--white);
+      color: var(--ink);
+      font-size: 11px;
+    }
+
+    .filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 32px;
+    }
+
+    .filter-chip {
+      min-height: 37px;
+      border: 1px solid var(--line);
+      padding: 8px 15px;
+      background: transparent;
+      color: #665c51;
+      font-size: 10px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .filter-chip:hover,
+    .filter-chip.active {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: white;
+    }
+
+    .catalog-count {
+      margin-bottom: 21px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      padding: 70px 20px;
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .empty-state h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 400;
+    }
+
+    .empty-state p {
+      color: var(--muted);
+    }
+
+    .product-detail {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr);
+      gap: clamp(35px, 7vw, 100px);
+      padding-block: 42px 95px;
+    }
+
+    .detail-gallery {
+      min-width: 0;
+    }
+
+    .detail-main-image {
+      aspect-ratio: 4 / 4.7;
+      overflow: hidden;
+      background: var(--paper-dark);
+    }
+
+    .detail-main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .detail-thumbs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 11px;
+      margin-top: 11px;
+    }
+
+    .detail-thumb {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border: 1px solid transparent;
+      padding: 0;
+      background: var(--paper-dark);
+    }
+
+    .detail-thumb.active {
+      border-color: var(--gold);
+    }
+
+    .detail-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .detail-copy {
+      padding-top: 22px;
+    }
+
+    .detail-copy h1 {
+      margin: 10px 0 13px;
+      font-family: var(--serif);
+      font-size: clamp(37px, 4vw, 55px);
+      font-weight: 400;
+      letter-spacing: -.04em;
+      line-height: 1.12;
+    }
+
+    .detail-price {
+      margin: 0 0 22px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .detail-price small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .detail-description {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .detail-rule {
+      height: 1px;
+      margin-block: 24px;
+      background: var(--line);
+    }
+
+    .option-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .option-heading span:last-child {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .size-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .size-btn {
+      min-width: 43px;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      font-size: 11px;
+    }
+
+    .size-btn:hover,
+    .size-btn.active {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: white;
+    }
+
+    .color-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .color-btn {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid var(--line);
+      padding: 7px 10px;
+      background: transparent;
+      font-size: 10px;
+    }
+
+    .color-btn.active {
+      border-color: var(--gold);
+    }
+
+    .color-dot {
+      width: 14px;
+      height: 14px;
+      border: 1px solid rgba(0, 0, 0, .15);
+      border-radius: 50%;
+    }
+
+    .detail-actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      margin-top: 27px;
+    }
+
+    .detail-actions .btn {
+      width: 100%;
+    }
+
+    .detail-actions .icon-btn {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--line);
+    }
+
+    .detail-assurance {
+      display: grid;
+      gap: 11px;
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .detail-assurance span {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .detail-assurance .icon {
+      width: 17px;
+      height: 17px;
+      color: var(--gold);
+    }
+
+    .detail-note {
+      margin-top: 25px;
+      border-left: 2px solid var(--gold);
+      padding: 13px 16px;
+      background: #eee5d9;
+      color: #685e52;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .form-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+      gap: clamp(35px, 7vw, 100px);
+      padding-block: 70px 100px;
+    }
+
+    .form-side {
+      padding: 34px;
+      background: var(--ink);
+      color: white;
+    }
+
+    .form-side .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .form-side h2 {
+      margin: 16px 0;
+      font-family: var(--serif);
+      font-size: 37px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .form-side p {
+      color: rgba(255, 255, 255, .68);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .form-contact-list {
+      display: grid;
+      gap: 17px;
+      margin-top: 35px;
+    }
+
+    .form-contact-item {
+      display: flex;
+      gap: 11px;
+      align-items: start;
+    }
+
+    .form-contact-item .icon {
+      width: 19px;
+      height: 19px;
+      color: var(--gold-light);
+    }
+
+    .form-contact-item strong {
+      display: block;
+      font-size: 11px;
+    }
+
+    .form-contact-item span,
+    .form-contact-item a {
+      display: block;
+      margin-top: 3px;
+      color: rgba(255, 255, 255, .66);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .form-panel h2 {
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 400;
+    }
+
+    .form-panel > p {
+      margin: 0 0 27px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 14px;
+    }
+
+    .form-field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      min-height: 47px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 12px;
+      outline: none;
+      background: var(--white);
+      color: var(--ink);
+      font-size: 12px;
+    }
+
+    .form-field textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-privacy {
+      margin: 13px 0 20px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .contact-map-card {
+      display: flex;
+      min-height: 140px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      margin-top: 25px;
+      border: 1px solid var(--line);
+      padding: 24px;
+      background: var(--white);
+    }
+
+    .contact-map-card h3 {
+      margin: 0 0 7px;
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .contact-map-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .contact-quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 24px;
+    }
+
+    .contact-quick-card {
+      padding: 25px;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .contact-quick-card .icon {
+      width: 23px;
+      height: 23px;
+      color: var(--gold);
+    }
+
+    .contact-quick-card h3 {
+      margin: 18px 0 5px;
+      font-family: var(--serif);
+      font-size: 21px;
+      font-weight: 400;
+    }
+
+    .contact-quick-card p,
+    .contact-quick-card a {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-quick-card a:hover {
+      color: var(--gold);
+    }
+
+    .site-footer {
+      padding-top: 64px;
+      background: #1b1714;
+      color: #f4ece2;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .75fr .8fr 1.1fr;
+      gap: 35px;
+      padding-bottom: 49px;
+    }
+
+    .footer-brand .brand-name {
+      font-size: 22px;
+    }
+
+    .footer-brand .brand-subtitle {
+      color: #b3a595;
+    }
+
+    .footer-brand p,
+    .footer-column p {
+      max-width: 320px;
+      color: #b7aa9b;
+      font-size: 11px;
+      line-height: 1.95;
+    }
+
+    .footer-column h3 {
+      margin: 5px 0 17px;
+      color: #d8b889;
+      font-size: 10px;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 11px;
+    }
+
+    .footer-links a {
+      width: fit-content;
+      color: #d8cec3;
+      font-size: 11px;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-contact {
+      display: grid;
+      gap: 11px;
+    }
+
+    .footer-contact a,
+    .footer-contact span {
+      display: flex;
+      align-items: start;
+      gap: 9px;
+      color: #d8cec3;
+      font-size: 10px;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-contact .icon {
+      width: 16px;
+      height: 16px;
+      color: var(--gold-light);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 25px;
+      border-top: 1px solid rgba(255, 255, 255, .13);
+      padding-block: 18px 24px;
+      color: #958a7e;
+      font-size: 9px;
+      line-height: 1.8;
+    }
+
+    .preview-note {
+      max-width: 640px;
+      text-align: right;
+    }
+
+    .overlay {
+      position: fixed;
+      z-index: 90;
+      inset: 0;
+      visibility: hidden;
+      background: rgba(20, 16, 13, .55);
+      opacity: 0;
+      transition: opacity .22s, visibility .22s;
+    }
+
+    .overlay.open {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      width: min(475px, 100%);
+      flex-direction: column;
+      transform: translateX(100%);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      transition: transform .28s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      display: flex;
+      min-height: 77px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      padding: 18px 23px;
+    }
+
+    .drawer-header h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 400;
+    }
+
+    .drawer-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 23px;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 85px minmax(0, 1fr) auto;
+      gap: 14px;
+      padding-block: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cart-item img {
+      width: 85px;
+      height: 105px;
+      object-fit: cover;
+      background: var(--paper-dark);
+    }
+
+    .cart-item h3 {
+      margin: 2px 0 6px;
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    .cart-item small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .cart-item-price {
+      font-size: 11px;
+      font-weight: 700;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .quantity-control {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 13px;
+      border: 1px solid var(--line);
+      padding: 4px 7px;
+    }
+
+    .quantity-control button {
+      display: grid;
+      width: 21px;
+      height: 21px;
+      place-items: center;
+      border: 0;
+      background: transparent;
+      font-size: 15px;
+    }
+
+    .quantity-control span {
+      min-width: 14px;
+      text-align: center;
+      font-size: 10px;
+    }
+
+    .remove-item {
+      display: block;
+      margin-top: 7px;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 9px;
+      text-decoration: underline;
+    }
+
+    .drawer-footer {
+      border-top: 1px solid var(--line);
+      padding: 20px 23px 24px;
+      background: var(--white);
+    }
+
+    .subtotal-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 7px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .drawer-footer p {
+      margin: 0 0 17px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .drawer-footer .btn {
+      width: 100%;
+    }
+
+    .drawer-empty {
+      padding: 70px 10px;
+      text-align: center;
+    }
+
+    .drawer-empty .icon {
+      width: 34px;
+      height: 34px;
+      margin-bottom: 14px;
+      color: var(--gold);
+    }
+
+    .drawer-empty h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 400;
+    }
+
+    .drawer-empty p {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .toast {
+      position: fixed;
+      z-index: 130;
+      right: 20px;
+      bottom: 20px;
+      max-width: min(360px, calc(100% - 40px));
+      transform: translateY(15px);
+      visibility: hidden;
+      border: 1px solid rgba(255,255,255,.13);
+      padding: 14px 18px;
+      background: var(--ink);
+      color: white;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      font-size: 11px;
+      line-height: 1.7;
+      transition: .22s;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media (max-width: 1050px) {
+      .header-center {
+        display: none;
+      }
+
+      .header-main {
+        grid-template-columns: 1fr auto;
+      }
+
+      .category-grid,
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .category-card {
+        min-height: 320px;
+      }
+
+      .product-detail {
+        gap: 35px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 34px, var(--container));
+      }
+
+      .announcement {
+        min-height: 30px;
+        font-size: 8px;
+        letter-spacing: .1em;
+      }
+
+      .header-main {
+        min-height: 67px;
+        gap: 9px;
+      }
+
+      .brand-mark {
+        width: 37px;
+        height: 37px;
+        font-size: 18px;
+      }
+
+      .brand-name {
+        font-size: 17px;
+      }
+
+      .brand-subtitle {
+        font-size: 7px;
+      }
+
+      .header-actions {
+        gap: 5px;
+      }
+
+      .header-actions .icon-btn {
+        width: 32px;
+        height: 32px;
+      }
+
+      .mobile-menu-button {
+        display: inline-flex;
+      }
+
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-nav.open {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 20px;
+        border-top: 1px solid var(--line);
+        padding: 6px 18px 13px;
+        background: var(--paper);
+      }
+
+      .mobile-nav a {
+        border-bottom: 1px solid rgba(32, 27, 23, .08);
+        padding-block: 12px;
+        font-size: 9px;
+      }
+
+      .hero {
+        min-height: 660px;
+        min-height: min(730px, 82svh);
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(90deg, rgba(20, 16, 13, .85), rgba(20, 16, 13, .34)),
+          linear-gradient(0deg, rgba(20, 16, 13, .5), transparent 65%),
+          url("https://images.unsplash.com/photo-1563434194539-fcc823f9bf92?auto=format&fit=crop&w=1200&q=82") 58% center / cover;
+      }
+
+      .hero-inner {
+        padding-block: 55px;
+      }
+
+      .hero .display {
+        font-size: clamp(44px, 13vw, 65px);
+      }
+
+      .hero-copy {
+        max-width: 350px;
+        font-size: 12px;
+      }
+
+      .hero-note {
+        margin-top: 35px;
+        font-size: 8px;
+      }
+
+      .trust-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        min-height: 69px;
+        justify-content: flex-start;
+        padding-inline: 28px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0;
+      }
+
+      .section {
+        padding-block: 61px;
+      }
+
+      .section-head {
+        display: block;
+        margin-bottom: 23px;
+      }
+
+      .section-head > .text-link {
+        margin-top: 17px;
+      }
+
+      .category-grid {
+        gap: 11px;
+      }
+
+      .category-card {
+        min-height: 255px;
+      }
+
+      .category-content {
+        padding: 15px;
+      }
+
+      .category-content h3 {
+        font-size: 22px;
+      }
+
+      .category-content .text-link {
+        font-size: 8px;
+      }
+
+      .product-grid {
+        gap: 23px 11px;
+      }
+
+      .product-image-wrap {
+        aspect-ratio: 4 / 4.8;
+      }
+
+      .product-action {
+        position: static;
+        transform: none;
+        padding: 0;
+        background: transparent;
+      }
+
+      .product-action button {
+        min-height: 35px;
+        margin-top: 8px;
+        border: 1px solid var(--line);
+        color: var(--ink);
+        font-size: 8px;
+      }
+
+      .product-card:hover .product-image {
+        transform: none;
+      }
+
+      .product-heart {
+        top: 7px;
+        right: 7px;
+        width: 30px;
+        height: 30px;
+      }
+
+      .product-info {
+        padding-top: 10px;
+      }
+
+      .product-name {
+        font-size: 17px;
+      }
+
+      .product-blurb {
+        font-size: 10px;
+      }
+
+      .product-price {
+        font-size: 11px;
+      }
+
+      .editorial {
+        grid-template-columns: 1fr;
+      }
+
+      .editorial-image {
+        min-height: 360px;
+        max-height: 460px;
+      }
+
+      .editorial-content {
+        padding: 48px 24px 55px;
+      }
+
+      .bespoke-banner {
+        padding-block: 61px;
+      }
+
+      .bespoke-inner {
+        display: block;
+      }
+
+      .bespoke-inner .btn {
+        margin-top: 12px;
+      }
+
+      .page-hero {
+        padding-block: 41px;
+      }
+
+      .catalog-section {
+        padding-block: 30px 65px;
+      }
+
+      .catalog-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .search-field {
+        width: 100%;
+      }
+
+      .catalog-controls {
+        justify-content: space-between;
+      }
+
+      .product-detail {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding-block: 22px 65px;
+      }
+
+      .detail-main-image {
+        aspect-ratio: 4 / 4.2;
+      }
+
+      .detail-copy {
+        padding-top: 23px;
+      }
+
+      .detail-copy h1 {
+        font-size: 42px;
+      }
+
+      .form-layout {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding-block: 38px 65px;
+      }
+
+      .form-side {
+        padding: 27px;
+      }
+
+      .form-side h2 {
+        font-size: 32px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
+
+      .contact-map-card {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 22px;
+      }
+
+      .contact-quick-grid {
+        grid-template-columns: 1fr;
+        gap: 11px;
+      }
+
+      .contact-quick-card {
+        padding: 21px;
+      }
+
+      .contact-quick-card h3 {
+        margin-top: 10px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 20px;
+      }
+
+      .footer-grid .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 9px;
+      }
+
+      .preview-note {
+        text-align: left;
+      }
+
+      .cart-drawer {
+        width: min(100%, 430px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-bag" viewBox="0 0 24 24">
+      <path d="M5 8h14l1 13H4L5 8Z"></path>
+      <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+    </symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24">
+      <path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.8l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.4 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"></path>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="10.8" cy="10.8" r="6.8"></circle>
+      <path d="m16 16 5 5"></path>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M4 12h15"></path>
+      <path d="m13 5 7 7-7 7"></path>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="m6 6 12 12M18 6 6 18"></path>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <path d="M3 7h18M3 12h18M3 17h18"></path>
+    </symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24">
+      <path d="M12 5v14M5 12h14"></path>
+    </symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24">
+      <path d="M5 12h14"></path>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24">
+      <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+      <circle cx="12" cy="10" r="2.5"></circle>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24">
+      <path d="M6.5 3h3l1.5 5-2 1.5a16 16 0 0 0 5.5 5.5l1.5-2 5 1.5v3A2 2 0 0 1 19 20C10 20 4 14 4 5a2 2 0 0 1 2.5-2Z"></path>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="1"></rect>
+      <path d="m3 7 9 6 9-6"></path>
+    </symbol>
+    <symbol id="i-ruler" viewBox="0 0 24 24">
+      <path d="m3 16 13-13 5 5L8 21 3 16Z"></path>
+      <path d="m13 6 3 3M10 9l2 2M7 12l3 3"></path>
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"></path>
+      <path d="m9 12 2 2 4-4"></path>
+    </symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24">
+      <path d="M8 12V5a1.8 1.8 0 0 1 3.6 0v5"></path>
+      <path d="M11.6 10V4.5a1.8 1.8 0 0 1 3.6 0V11"></path>
+      <path d="M15.2 10V6.5a1.8 1.8 0 0 1 3.6 0v8c0 4-2.5 6.5-6.5 6.5h-1.5c-2 0-3.5-1-4.5-2.5L3 14a1.8 1.8 0 0 1 3-2l2 2"></path>
+    </symbol>
+  </svg>
+
+  <div class="announcement">
+    Handcrafted shoemaking · Dhaka, Bangladesh · Bespoke enquiries welcome
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-main">
+        <a class="brand" href="#/" aria-label="Leather Bros home">
+          <span class="brand-mark">LB</span>
+          <span class="brand-copy">
+            <span class="brand-name">Leather Bros.</span>
+            <span class="brand-subtitle">Handcrafted Shoemaker</span>
+          </span>
+        </a>
+
+        <div class="header-center">
+          <span class="header-caption">Crafted to fit · Designed to impress</span>
+        </div>
+
+        <div class="header-actions">
+          <a class="icon-btn" href="#/wishlist" aria-label="Wishlist" title="Wishlist">
+            <span class="icon"><svg><use href="#i-heart"></use></svg></span>
+            <span class="count" id="wishlist-count">0</span>
+          </a>
+          <button class="icon-btn" type="button" data-action="cart-open" aria-label="Open bag" title="Shopping bag">
+            <span class="icon"><svg><use href="#i-bag"></use></svg></span>
+            <span class="count" id="cart-count">0</span>
+          </button>
+          <button class="icon-btn mobile-menu-button" type="button" data-action="menu-toggle" aria-label="Open menu">
+            <span class="icon"><svg><use href="#i-menu"></use></svg></span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#/" data-nav="/">Home</a>
+        <a href="#/shop" data-nav="/shop">Shop all</a>
+        <a href="#/shop?cat=Oxford%20%26%20Derby" data-nav="/collections">Oxford & Derby</a>
+        <a href="#/shop?cat=Loafers" data-nav="/loafers">Loafers</a>
+        <a href="#/bespoke" data-nav="/bespoke">Bespoke</a>
+        <a href="#/contact" data-nav="/contact">Contact</a>
+      </nav>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="#/">Home</a>
+      <a href="#/shop">Shop all</a>
+      <a href="#/shop?cat=Oxford%20%26%20Derby">Oxford & Derby</a>
+      <a href="#/shop?cat=Loafers">Loafers</a>
+      <a href="#/shop?cat=Boots">Boots</a>
+      <a href="#/bespoke">Bespoke</a>
+      <a href="#/contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="app"></main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#/">
+            <span class="brand-mark">LB</span>
+            <span class="brand-copy">
+              <span class="brand-name">Leather Bros.</span>
+              <span class="brand-subtitle">Handcrafted Shoemaker</span>
+            </span>
+          </a>
+          <p>
+            Considered silhouettes, polished details and a shoemaking spirit
+            rooted in craftsmanship. Made for people who pay attention to the details.
+          </p>
+          <a class="text-link" href="#/bespoke">Explore bespoke <span class="icon"><svg><use href="#i-arrow"></use></svg></span></a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Explore</h3>
+          <div class="footer-links">
+            <a href="#/shop">Shop all</a>
+            <a href="#/shop?cat=Oxford%20%26%20Derby">Oxford & Derby</a>
+            <a href="#/shop?cat=Loafers">Loafers</a>
+            <a href="#/shop?cat=Boots">Boots</a>
+            <a href="#/bespoke">Custom orders</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Customer care</h3>
+          <div class="footer-links">
+            <a href="#/contact">Contact us</a>
+            <a href="#/contact">Visit the showroom</a>
+            <a href="#/contact">Sizing enquiries</a>
+            <a href="#/contact">Order enquiries</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Visit or get in touch</h3>
+          <div class="footer-contact">
+            <span><span class="icon"><svg><use href="#i-pin"></use></svg></span>5/2, North Pirerbag, beside Chapra Masjid, 60 Feet Road, Dhaka-1216</span>
+            <a href="tel:+8801629786297"><span class="icon"><svg><use href="#i-phone"></use></svg></span>01629-786297</a>
+            <a href="mailto:leatherbrosbd@gmail.com"><span class="icon"><svg><use href="#i-mail"></use></svg></span>leatherbrosbd@gmail.com</a>
+            <a href="https://wa.me/8801708655897" target="_blank" rel="noopener"><span class="icon"><svg><use href="#i-phone"></use></svg></span>WhatsApp: +880 1708-655897</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="footer-year"></span> Leather Bros. All rights reserved.</span>
+        <span class="preview-note">
+          Concept preview: product names, prices and photographs are illustrative and require
+          confirmation by Leather Bros before the site goes live.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="cart-overlay" data-action="cart-close"></div>
+
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="drawer-header">
+      <h2>Your selection</h2>
+      <button class="icon-btn" type="button" data-action="cart-close" aria-label="Close shopping bag">
+        <span class="icon"><svg><use href="#i-close"></use></svg></span>
+      </button>
+    </div>
+    <div class="drawer-body" id="cart-body"></div>
+    <div class="drawer-footer" id="cart-footer"></div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    "use strict";
+
+    /*
+      Before launch:
+      1. Replace illustrative product information and prices with approved catalogue data.
+      2. Replace editorial photos with Leather Bros-owned or approved product photographs.
+      3. Confirm telephone, WhatsApp, address, product availability and sizing.
+      4. This prototype does not process card payments or store orders on a server.
+    */
+
+    const CONFIG = {
+      brand: "Leather Bros.",
+      phoneDisplay: "01629-786297",
+      phoneTel: "+8801629786297",
+      whatsapp: "8801708655897",
+      email: "leatherbrosbd@gmail.com",
+      address: "5/2, North Pirerbag (beside Chapra Masjid), 60 Feet Road, Dhaka-1216, Bangladesh",
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=5%2F2%20North%20Pirerbag%2060%20Feet%20Road%20Dhaka%201216",
+      facebookUrl: "https://www.facebook.com/"
+    };
+
+    const IMAGES = {
+      black: "https://images.unsplash.com/photo-1575583153865-d6c30eb00e87?auto=format&fit=crop&w=1100&q=85",
+      brown: "https://images.unsplash.com/photo-1563434194539-fcc823f9bf92?auto=format&fit=crop&w=1100&q=85",
+      loafer: "https://images.unsplash.com/photo-1615979474401-8a6a344de5bd?auto=format&fit=crop&w=1100&q=85",
+      box: "https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?auto=format&fit=crop&w=1100&q=85",
+      boot: "https://images.unsplash.com/photo-1658837407083-308b902ee99d?auto=format&fit=crop&w=1100&q=85",
+      lifestyle: "https://images.unsplash.com/photo-1426649397221-b62c5a7824ee?auto=format&fit=crop&w=1100&q=85",
+      blackPair: "https://images.unsplash.com/photo-1777987601426-c05a82045862?auto=format&fit=crop&w=1100&q=85",
+      brownPair: "https://images.unsplash.com/photo-1777987601447-266e128de448?auto=format&fit=crop&w=1100&q=85",
+      wornShoes: "https://images.unsplash.com/photo-1658837407083-308b902ee99d?auto=format&fit=crop&w=1100&q=85",
+      classic: "https://images.unsplash.com/photo-1426649397221-b62c5a7824ee?auto=format&fit=crop&w=1100&q=85"
+    };
+
+    const PRODUCTS = [
+      {
+        id: "regent-oxford",
+        name: "Regent Cap-Toe Oxford",
+        category: "Oxford & Derby",
+        price: 7900,
+        image: IMAGES.black,
+        gallery: [IMAGES.black, IMAGES.box, IMAGES.classic],
+        colors: ["Black", "Cognac"],
+        description: "A clean, formal silhouette designed for tailored dressing, business meetings and evening occasions.",
+        details: ["Classic lace-up profile", "Polished formal finish", "Size availability to be confirmed"]
+      },
+      {
+        id: "marlowe-derby",
+        name: "Marlowe Cognac Derby",
+        category: "Oxford & Derby",
+        price: 7600,
+        image: IMAGES.brown,
+        gallery: [IMAGES.brown, IMAGES.box, IMAGES.classic],
+        colors: ["Cognac", "Dark Brown"],
+        description: "Warm cognac tones and a versatile lace-up shape make this a considered choice for smart everyday wear.",
+        details: ["Versatile lace-up design", "Warm brown colour direction", "Size availability to be confirmed"]
+      },
+      {
+        id: "sovereign-chelsea",
+        name: "Sovereign Chelsea Boot",
+        category: "Boots",
+        price: 9200,
+        image: IMAGES.boot,
+        gallery: [IMAGES.boot, IMAGES.blackPair, IMAGES.black],
+        colors: ["Black", "Dark Brown"],
+        description: "A streamlined ankle-boot concept with a confident profile for formal and smart-casual wardrobes.",
+        details: ["Chelsea-inspired silhouette", "Easy-to-style ankle height", "Size availability to be confirmed"]
+      },
+      {
+        id: "nocturne-boot",
+        name: "Nocturne Dress Boot",
+        category: "Boots",
+        price: 9800,
+        image: IMAGES.blackPair,
+        gallery: [IMAGES.blackPair, IMAGES.boot, IMAGES.box],
+        colors: ["Black"],
+        description: "A darker, more dramatic dress-boot direction built around a sleek profile and evening-ready styling.",
+        details: ["Refined ankle-boot profile", "Dark polished appearance", "Size availability to be confirmed"]
+      },
+      {
+        id: "milano-loafer",
+        name: "Milano Penny Loafer",
+        category: "Loafers",
+        price: 6900,
+        image: IMAGES.loafer,
+        gallery: [IMAGES.loafer, IMAGES.brownPair, IMAGES.box],
+        colors: ["Black", "Cognac"],
+        description: "A versatile slip-on design for days when relaxed ease and considered styling belong together.",
+        details: ["Slip-on loafer silhouette", "Smart-casual styling direction", "Size availability to be confirmed"]
+      },
+      {
+        id: "verona-tassel",
+        name: "Verona Tassel Loafer",
+        category: "Loafers",
+        price: 7200,
+        image: IMAGES.brownPair,
+        gallery: [IMAGES.brownPair, IMAGES.loafer, IMAGES.classic],
+        colors: ["Dark Brown", "Black"],
+        description: "A classic loafer-inspired design with a dressier character for dinners, occasions and refined daily wear.",
+        details: ["Tassel-loafer design direction", "Elegant slip-on profile", "Size availability to be confirmed"]
+      },
+      {
+        id: "double-monk",
+        name: "The Double Monk",
+        category: "Monk Straps",
+        price: 8500,
+        image: IMAGES.box,
+        gallery: [IMAGES.box, IMAGES.brown, IMAGES.black],
+        colors: ["Cognac", "Black"],
+        description: "A distinctive strap-led silhouette for the customer who prefers something beyond the traditional lace-up.",
+        details: ["Double-strap inspired profile", "Distinctive formal styling", "Size availability to be confirmed"]
+      },
+      {
+        id: "heritage-brogue",
+        name: "Heritage Brogue",
+        category: "Oxford & Derby",
+        price: 8200,
+        image: IMAGES.classic,
+        gallery: [IMAGES.classic, IMAGES.brown, IMAGES.box],
+        colors: ["Dark Brown", "Black"],
+        description: "A heritage-inspired formal concept that brings a little more character to the classic dress shoe.",
+        details: ["Brogue-inspired styling", "Formal and occasion wear", "Size availability to be confirmed"]
+      },
+      {
+        id: "arden-wingtip",
+        name: "Arden Wingtip",
+        category: "Oxford & Derby",
+        price: 8400,
+        image: IMAGES.brownPair,
+        gallery: [IMAGES.brownPair, IMAGES.box, IMAGES.classic],
+        colors: ["Cognac", "Dark Brown"],
+        description: "A traditional wingtip direction for customers drawn to detail, texture and timeless menswear.",
+        details: ["Wingtip-inspired design", "Warm classic colour palette", "Size availability to be confirmed"]
+      },
+      {
+        id: "onyx-wholecut",
+        name: "Onyx Wholecut",
+        category: "Oxford & Derby",
+        price: 8900,
+        image: IMAGES.blackPair,
+        gallery: [IMAGES.blackPair, IMAGES.black, IMAGES.box],
+        colors: ["Black"],
+        description: "A minimal, formal concept with a restrained profile made for clean lines and sharp tailoring.",
+        details: ["Minimal formal silhouette", "Black evening-wear direction", "Size availability to be confirmed"]
+      },
+      {
+        id: "weekend-loafer",
+        name: "Weekend Loafer",
+        category: "Loafers",
+        price: 6500,
+        image: IMAGES.lifestyle,
+        gallery: [IMAGES.lifestyle, IMAGES.loafer, IMAGES.brown],
+        colors: ["Dark Brown", "Cognac"],
+        description: "A relaxed loafer direction for smart-casual looks, travel days and easy weekend dressing.",
+        details: ["Relaxed slip-on profile", "Smart-casual styling direction", "Size availability to be confirmed"]
+      },
+      {
+        id: "atelier-custom",
+        name: "Atelier Bespoke",
+        category: "Bespoke",
+        price: 10500,
+        image: IMAGES.brown,
+        gallery: [IMAGES.brown, IMAGES.box, IMAGES.blackPair],
+        colors: ["Black", "Cognac", "Dark Brown"],
+        description: "A custom-order concept for customers who want to discuss a preferred silhouette, finish and fit with the shoemaker.",
+        details: ["Custom enquiry required", "Design and fit discussed directly", "Final price confirmed after consultation"]
+      }
+    ];
+
+    const CATEGORIES = ["All", "Oxford & Derby", "Loafers", "Boots", "Monk Straps"];
+    const STORAGE = {
+      cart: "leatherbros_demo_cart_v1",
+      wishlist: "leatherbros_demo_wishlist_v1"
+    };
+
+    let cart = readStorage(STORAGE.cart, []);
+    let wishlist = readStorage(STORAGE.wishlist, []);
+    let shopState = { query: "", category: "All", sort: "featured" };
+    let toastTimeout = null;
+
+    function readStorage(key, fallback) {
+      try {
+        const value = JSON.parse(localStorage.getItem(key) || "null");
+        return value ?? fallback;
+      } catch (error) {
+        return fallback;
+      }
+    }
+
+    function saveStorage() {
+      localStorage.setItem(STORAGE.cart, JSON.stringify(cart));
+      localStorage.setItem(STORAGE.wishlist, JSON.stringify(wishlist));
+    }
+
+    function icon(name, extraClass = "") {
+      return `<span class="icon ${extraClass}"><svg aria-hidden="true"><use href="#i-${name}"></use></svg></span>`;
+    }
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      })[character]);
+    }
+
+    function money(amount) {
+      return "৳" + Number(amount).toLocaleString("en-US");
+    }
+
+    function productById(id) {
+      return PRODUCTS.find(product => product.id === id);
+    }
+
+    function getRoute() {
+      const raw = location.hash.replace(/^#\/?/, "");
+      const parts = raw.split("?");
+      const path = parts[0] || "";
+      const params = new URLSearchParams(parts[1] || "");
+
+      if (!path) return { page: "home", params };
+      if (path === "shop") return { page: "shop", params };
+      if (path === "wishlist") return { page: "wishlist", params };
+      if (path === "bespoke") return { page: "bespoke", params };
+      if (path === "contact") return { page: "contact", params };
+      if (path.startsWith("product/")) {
+        return { page: "product", id: path.split("/")[1], params };
+      }
+
+      return { page: "home", params };
+    }
+
+    function updateHeader() {
+      document.getElementById("cart-count").textContent =
+        cart.reduce((total, item) => total + item.qty, 0);
+
+      document.getElementById("wishlist-count").textContent = wishlist.length;
+      document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+      const route = getRoute();
+      document.querySelectorAll("[data-nav]").forEach(link => {
+        link.classList.remove("active");
+
+        if (
+          (route.page === "home" && link.dataset.nav === "/") ||
+          (route.page === "shop" && link.dataset.nav === "/shop") ||
+          (route.page === "bespoke" && link.dataset.nav === "/bespoke") ||
+          (route.page === "contact" && link.dataset.nav === "/contact")
+        ) {
+          link.classList.add("active");
+        }
+      });
+    }
+
+    function productCard(product) {
+      const saved = wishlist.includes(product.id);
+
+      return `
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <a href="#/product/${product.id}" aria-label="View ${escapeHTML(product.name)}">
+              <img class="product-image" src="${product.image}" alt="${escapeHTML(product.name)}" loading="lazy">
+            </a>
+            <button
+              class="product-heart ${saved ? "saved" : ""}"
+              type="button"
+              data-action="wishlist-toggle"
+              data-id="${product.id}"
+              aria-label="${saved ? "Remove from wishlist" : "Add to wishlist"}">
+              ${icon("heart")}
+            </button>
+            <div class="product-action">
+              <button type="button" data-action="quick-add" data-id="${product.id}">
+                ${icon("bag")} Add to selection
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">${escapeHTML(product.category)}</div>
+            <a class="product-name" href="#/product/${product.id}">${escapeHTML(product.name)}</a>
+            <p class="product-blurb">${escapeHTML(product.description)}</p>
+            <div class="product-price">${money(product.price)} <small>preview price</small></div>
+          </div>
+        </article>
+      `;
+    }
+
+    function productGrid(products) {
+      if (!products.length) {
+        return `
+          <div class="empty-state">
+            <h3>No pieces found</h3>
+            <p>Try another search or choose a different category.</p>
+            <button class="btn btn-outline" type="button" data-action="clear-filters">Clear filters</button>
+          </div>
+        `;
+      }
+
+      return products.map(productCard).join("");
+    }
+
+    function homePage() {
+      const featured = PRODUCTS.filter(product => product.category !== "Bespoke").slice(0, 4);
+
+      return `
+        <section class="hero">
+          <div class="container hero-inner">
+            <div class="eyebrow">A concept for Leather Bros.</div>
+            <h1 class="display">Shoes with<br><em>character.</em><br>Made to be noticed.</h1>
+            <p class="hero-copy">
+              A considered approach to handcrafted footwear. Timeless shapes,
+              confident details and a personal touch — made for the way you move.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-light" href="#/shop">Explore the collection ${icon("arrow")}</a>
+              <a class="btn btn-outline" href="#/bespoke">Discover bespoke</a>
+            </div>
+            <div class="hero-note"><span></span> Handcrafted shoemaking · Dhaka, Bangladesh</div>
+          </div>
+        </section>
+
+        <div class="trust-strip">
+          <div class="trust-item">
+            ${icon("hand")}
+            <div><strong>Craft-led design</strong><small>Considered details and timeless silhouettes</small></div>
+          </div>
+          <div class="trust-item">
+            ${icon("ruler")}
+            <div><strong>Bespoke enquiries</strong><small>Discuss fit, finish and your preferred style</small></div>
+          </div>
+          <div class="trust-item">
+            ${icon("shield")}
+            <div><strong>Personal assistance</strong><small>Direct contact for sizing and order queries</small></div>
+          </div>
+        </div>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <div class="eyebrow">Find your silhouette</div>
+                <h2 class="section-title">The collection, considered.</h2>
+                <p class="section-copy">From formal lace-ups to relaxed loafers, explore a range of shapes for different moments.</p>
+              </div>
+              <a class="text-link" href="#/shop">View all pieces ${icon("arrow")}</a>
+            </div>
+
+            <div class="category-grid">
+              <a class="category-card" href="#/shop?cat=Oxford%20%26%20Derby">
+                <img src="${IMAGES.black}" alt="Formal leather lace-up shoes" loading="lazy">
+                <div class="category-content">
+                  <small>01 / The formal edit</small>
+                  <h3>Oxford & Derby</h3>
+                  <span class="text-link">Explore styles ${icon("arrow")}</span>
+                </div>
+              </a>
+              <a class="category-card" href="#/shop?cat=Loafers">
+                <img src="${IMAGES.loafer}" alt="Loafer-inspired leather footwear" loading="lazy">
+                <div class="category-content">
+                  <small>02 / Effortless dressing</small>
+                  <h3>Loafers</h3>
+                  <span class="text-link">Explore styles ${icon("arrow")}</span>
+                </div>
+              </a>
+              <a class="category-card" href="#/shop?cat=Boots">
+                <img src="${IMAGES.boot}" alt="Leather dress boot" loading="lazy">
+                <div class="category-content">
+                  <small>03 / Modern classics</small>
+                  <h3>Boots</h3>
+                  <span class="text-link">Explore styles ${icon("arrow")}</span>
+                </div>
+              </a>
+              <a class="category-card" href="#/bespoke">
+                <img src="${IMAGES.box}" alt="Classic dress shoe details" loading="lazy">
+                <div class="category-content">
+                  <small>04 / Made personal</small>
+                  <h3>Bespoke</h3>
+                  <span class="text-link">Start an enquiry ${icon("arrow")}</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section featured-section">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <div class="eyebrow">A first look</div>
+                <h2 class="section-title">Selected signatures.</h2>
+                <p class="section-copy">An editorial sample of styles for the Leather Bros. online collection.</p>
+              </div>
+              <a class="text-link" href="#/shop">Shop the collection ${icon("arrow")}</a>
+            </div>
+            <div class="product-grid">${productGrid(featured)}</div>
+            <div class="center-action">
+              <a class="btn btn-outline" href="#/shop">Discover every style ${icon("arrow")}</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="editorial">
+          <div class="editorial-image">
+            <img src="${IMAGES.brown}" alt="Leather footwear editorial photograph" loading="lazy">
+          </div>
+          <div class="editorial-content">
+            <div>
+              <div class="eyebrow">Crafted to fit</div>
+              <h2 class="display">A little more<br>personal.</h2>
+              <p>
+                Great footwear is about more than a first impression. It is the
+                balance of proportion, finish and a fit that feels right.
+                Start a conversation about a bespoke pair with Leather Bros.
+              </p>
+              <div class="story-list">
+                <div class="story-item">
+                  ${icon("ruler")}
+                  <div><strong>Fit comes first</strong><span>Share your size, preferences and the fit you are looking for.</span></div>
+                </div>
+                <div class="story-item">
+                  ${icon("hand")}
+                  <div><strong>Your style, your direction</strong><span>Discuss a preferred shape, colour and occasion.</span></div>
+                </div>
+              </div>
+              <a class="btn" href="#/bespoke">Start a bespoke enquiry ${icon("arrow")}</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <div class="eyebrow">The everyday details</div>
+                <h2 class="section-title">Choose well. Wear often.</h2>
+              </div>
+            </div>
+            <div class="product-grid">${productGrid(PRODUCTS.slice(4, 8))}</div>
+            <div class="center-action"><a class="text-link" href="#/shop">Explore all designs ${icon("arrow")}</a></div>
+          </div>
+        </section>
+
+        <section class="bespoke-banner">
+          <div class="container bespoke-inner">
+            <div>
+              <div class="eyebrow">Made personal</div>
+              <h2 class="section-title">Have a pair in mind?</h2>
+              <p class="section-copy">Tell us what you are looking for. Send your details directly to the Leather Bros. team to discuss a custom order.</p>
+            </div>
+            <a class="btn btn-light" href="#/bespoke">Talk about your pair ${icon("arrow")}</a>
+          </div>
+        </section>
+      `;
+    }
+
+    function shopPage(category = "All", wishlistOnly = false) {
+      shopState = {
+        query: "",
+        category: category || "All",
+        sort: "featured"
+      };
+
+      return `
+        <section class="page-hero">
+          <div class="container">
+            <div class="breadcrumbs"><a href="#/">Home</a><span>/</span><span>${wishlistOnly ? "Wishlist" : "Shop"}</span></div>
+            <div class="eyebrow" style="margin-top:22px">${wishlistOnly ? "Your saved pieces" : "The footwear collection"}</div>
+            <h1 class="display">${wishlistOnly ? "Worth another look." : "Find your next pair."}</h1>
+            <p>${wishlistOnly
+              ? "Keep the styles you like close at hand. Your saved pieces stay in this browser."
+              : "Browse the concept collection, filter by style and open a product for its details, available options and order enquiry."}</p>
+          </div>
+        </section>
+
+        <section class="catalog-section">
+          <div class="container">
+            <div class="catalog-toolbar">
+              <label class="search-field">
+                ${icon("search")}
+                <input id="product-search" type="search" placeholder="Search styles, colours or categories..." aria-label="Search products">
+              </label>
+              <div class="catalog-controls">
+                <span class="catalog-count" id="catalog-count"></span>
+                <select class="select-field" id="product-sort" aria-label="Sort products">
+                  <option value="featured">Featured</option>
+                  <option value="price-low">Price: low to high</option>
+                  <option value="price-high">Price: high to low</option>
+                  <option value="name">Name: A to Z</option>
+                </select>
+              </div>
+            </div>
+
+            ${wishlistOnly ? "" : `
+              <div class="filter-chips" aria-label="Filter by category">
+                ${CATEGORIES.map(cat => `
+                  <a
+                    class="filter-chip ${cat === shopState.category ? "active" : ""}"
+                    href="${cat === "All" ? "#/shop" : "#/shop?cat=" + encodeURIComponent(cat)}">
+                    ${escapeHTML(cat)}
+                  </a>
+                `).join("")}
+              </div>
+            `}
+
+            <div class="product-grid" id="catalog-grid"></div>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderShopGrid(wishlistOnly = false) {
+      const grid = document.getElementById("catalog-grid");
+      if (!grid) return;
+
+      let items = wishlistOnly
+        ? PRODUCTS.filter(product => wishlist.includes(product.id))
+        : PRODUCTS.filter(product => product.category !== "Bespoke");
+
+      if (!wishlistOnly && shopState.category !== "All") {
+        items = items.filter(product => product.category === shopState.category);
+      }
+
+      const query = shopState.query.trim().toLowerCase();
+
+      if (query) {
+        items = items.filter(product =>
+          [product.name, product.category, product.description, ...product.colors]
+            .join(" ")
+            .toLowerCase()
+            .includes(query)
+        );
+      }
+
+      if (shopState.sort === "price-low") {
+        items.sort((a, b) => a.price - b.price);
+      } else if (shopState.sort === "price-high") {
+        items.sort((a, b) => b.price - a.price);
+      } else if (shopState.sort === "name") {
+        items.sort((a, b) => a.name.localeCompare(b.name));
+      }
+
+      document.getElementById("catalog-count").textContent =
+        `${items.length} ${items.length === 1 ? "style" : "styles"}`;
+
+      grid.innerHTML = productGrid(items);
+    }
+
+    function productPage(id) {
+      const product = productById(id);
+
+      if (!product) {
+        return `
+          <section class="page-hero">
+            <div class="container">
+              <div class="eyebrow">Product not found</div>
+              <h1 class="display">This style is unavailable.</h1>
+              <a class="btn" href="#/shop">Return to the collection ${icon("arrow")}</a>
+            </div>
+          </section>
+        `;
+      }
+
+      const saved = wishlist.includes(product.id);
+      const colors = product.colors.map((color, index) => `
+        <button type="button" class="color-btn ${index === 0 ? "active" : ""}" data-action="select-color" data-color="${escapeHTML(color)}">
+          <span class="color-dot" style="background:${color === "Black" ? "#211f1d" : color === "Cognac" ? "#a76737" : "#4b3025"}"></span>
+          ${escapeHTML(color)}
+        </button>
+      `).join("");
+
+      return `
+        <section class="container">
+          <div class="breadcrumbs" style="padding-top:23px">
+            <a href="#/">Home</a><span>/</span>
+            <a href="#/shop">Shop</a><span>/</span>
+            <span>${escapeHTML(product.name)}</span>
+          </div>
+
+          <div class="product-detail" data-product-id="${product.id}">
+            <div class="detail-gallery">
+              <div class="detail-main-image">
+                <img id="detail-main-image" src="${product.image}" alt="${escapeHTML(product.name)}">
+              </div>
+              <div class="detail-thumbs">
+                ${product.gallery.map((src, index) => `
+                  <button type="button" class="detail-thumb ${index === 0 ? "active" : ""}" data-action="gallery-image" data-image="${src}" aria-label="View product image ${index + 1}">
+                    <img src="${src}" alt="" loading="lazy">
+                  </button>
+                `).join("")}
+              </div>
+            </div>
+
+            <div class="detail-copy">
+              <div class="eyebrow">${escapeHTML(product.category)}</div>
+              <h1>${escapeHTML(product.name)}</h1>
+              <p class="detail-price">${money(product.price)}<small>Illustrative preview price · confirmation required before purchase</small></p>
+              <p class="detail-description">${escapeHTML(product.description)}</p>
+
+              <div class="detail-rule"></div>
+
+              <div class="option-heading"><span>Choose a size</span><span>UK sizing preview</span></div>
+              <div class="size-grid" id="detail-size-grid">
+                ${[39, 40, 41, 42, 43, 44, 45].map(size => `
+                  <button class="size-btn ${size === 42 ? "active" : ""}" type="button" data-action="select-size" data-size="${size}">${size}</button>
+                `).join("")}
+              </div>
+              <p class="detail-description">Size options shown are illustrative. Confirm the available size and fit with Leather Bros before placing an order.</p>
+
+              <div class="detail-rule"></div>
+
+              <div class="option-heading"><span>Colour direction</span><span>Select one</span></div>
+              <div class="color-row">${colors}</div>
+
+              <div class="detail-rule"></div>
+
+              <div class="option-heading"><span>Style notes</span><span></span></div>
+              <div class="story-list">
+                ${product.details.map(detail => `
+                  <div class="story-item">${icon("shield")}<div><span>${escapeHTML(detail)}</span></div></div>
+                `).join("")}
+              </div>
+
+              <div class="detail-actions">
+                <button class="btn" type="button" data-action="detail-add" data-id="${product.id}">
+                  Add to selection ${icon("bag")}
+                </button>
+                <button class="icon-btn ${saved ? "saved" : ""}" type="button" data-action="wishlist-toggle" data-id="${product.id}" aria-label="Add to wishlist">
+                  ${icon("heart")}
+                </button>
+              </div>
+
+              <div class="detail-assurance">
+                <span>${icon("hand")} Crafted footwear concept from Leather Bros.</span>
+                <span>${icon("phone")} Personal help with size and order enquiries</span>
+                <span>${icon("shield")} Availability and final price confirmed directly</span>
+              </div>
+
+              <div class="detail-note">
+                This is a presentation prototype. Product photography, model name, exact specifications,
+                price and availability must be confirmed by Leather Bros before launch.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section featured-section">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <div class="eyebrow">Continue exploring</div>
+                <h2 class="section-title">You may also like.</h2>
+              </div>
+              <a class="text-link" href="#/shop">View collection ${icon("arrow")}</a>
+            </div>
+            <div class="product-grid">
+              ${productGrid(PRODUCTS.filter(item => item.id !== product.id && item.category !== "Bespoke").slice(0, 4))}
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    function bespokePage() {
+      return `
+        <section class="page-hero">
+          <div class="container">
+            <div class="breadcrumbs"><a href="#/">Home</a><span>/</span><span>Bespoke</span></div>
+            <div class="eyebrow" style="margin-top:22px">Made personal</div>
+            <h1 class="display">Your idea. Your fit.<br>Your pair.</h1>
+            <p>Begin a conversation about a custom pair. Share your preferred style, approximate size and the details that matter to you.</p>
+          </div>
+        </section>
+
+        <section class="container form-layout">
+          <aside class="form-side">
+            <div class="eyebrow">The bespoke conversation</div>
+            <h2>Designed around what you have in mind.</h2>
+            <p>
+              Every custom request starts with a discussion. Tell us the type of shoe,
+              colour, occasion and fit you prefer. The Leather Bros. team can then
+              confirm what is possible, the final price and the expected timeline.
+            </p>
+            <div class="form-contact-list">
+              <div class="form-contact-item">${icon("ruler")}<div><strong>Share your preferences</strong><span>Style, colour, size and occasion.</span></div></div>
+              <div class="form-contact-item">${icon("phone")}<div><strong>Continue directly</strong><span>Your enquiry will be prepared for WhatsApp.</span></div></div>
+              <div class="form-contact-item">${icon("shield")}<div><strong>Confirm before ordering</strong><span>Price, fit, availability and timeline are confirmed with the team.</span></div></div>
+            </div>
+          </aside>
+
+          <div class="form-panel">
+            <h2>Tell us about your pair.</h2>
+            <p>Complete the form below. It will open WhatsApp with your enquiry ready to send.</p>
+
+            <form id="bespoke-form">
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="bespoke-name">Your name *</label>
+                  <input id="bespoke-name" name="name" autocomplete="name" required maxlength="80" placeholder="Full name">
+                </div>
+                <div class="form-field">
+                  <label for="bespoke-phone">Phone number *</label>
+                  <input id="bespoke-phone" name="phone" autocomplete="tel" required maxlength="25" placeholder="01XXXXXXXXX">
+                </div>
+                <div class="form-field">
+                  <label for="bespoke-style">Preferred style *</label>
+                  <select id="bespoke-style" name="style" required>
+                    <option value="">Choose a style</option>
+                    <option>Oxford</option>
+                    <option>Derby</option>
+                    <option>Loafer</option>
+                    <option>Chelsea boot</option>
+                    <option>Monk strap</option>
+                    <option>Other / custom design</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="bespoke-size">Approximate shoe size</label>
+                  <select id="bespoke-size" name="size">
+                    <option value="">Select if known</option>
+                    <option>UK 39</option><option>UK 40</option><option>UK 41</option>
+                    <option>UK 42</option><option>UK 43</option><option>UK 44</option><option>UK 45</option>
+                    <option>Need size guidance</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="bespoke-colour">Preferred colour</label>
+                  <select id="bespoke-colour" name="colour">
+                    <option>Black</option>
+                    <option>Cognac</option>
+                    <option>Dark brown</option>
+                    <option>Other / discuss</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="bespoke-occasion">Occasion</label>
+                  <select id="bespoke-occasion" name="occasion">
+                    <option>Everyday / office</option>
+                    <option>Formal events</option>
+                    <option>Wedding</option>
+                    <option>Smart casual</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-field full">
+                  <label for="bespoke-notes">Additional details</label>
+                  <textarea id="bespoke-notes" name="notes" maxlength="1000" placeholder="Describe the design, finish or fit you have in mind."></textarea>
+                </div>
+              </div>
+              <p class="form-privacy">Your form will not be sent automatically. WhatsApp will open with the enquiry text, and you can review it before sending.</p>
+              <button class="btn" type="submit">Prepare my enquiry ${icon("arrow")}</button>
+            </form>
+          </div>
+        </section>
+      `;
+    }
+
+    function contactPage() {
+      return `
+        <section class="page-hero">
+          <div class="container">
+            <div class="breadcrumbs"><a href="#/">Home</a><span>/</span><span>Contact</span></div>
+            <div class="eyebrow" style="margin-top:22px">We are here to help</div>
+            <h1 class="display">A conversation<br>starts here.</h1>
+            <p>Ask about a product, confirm a size, discuss a custom design or plan a visit to the Leather Bros. showroom.</p>
+          </div>
+        </section>
+
+        <section class="container" style="padding-top:35px">
+          <div class="contact-quick-grid">
+            <div class="contact-quick-card">
+              ${icon("phone")}
+              <h3>Call the team</h3>
+              <p>For direct product and order enquiries.</p>
+              <a href="tel:${CONFIG.phoneTel}">${CONFIG.phoneDisplay}</a>
+            </div>
+            <div class="contact-quick-card">
+              ${icon("mail")}
+              <h3>Email</h3>
+              <p>Send a detailed question or product enquiry.</p>
+              <a href="mailto:${CONFIG.email}">${CONFIG.email}</a>
+            </div>
+            <div class="contact-quick-card">
+              ${icon("phone")}
+              <h3>WhatsApp</h3>
+              <p>Continue with a product, sizing or custom-order enquiry.</p>
+              <a href="https://wa.me/${CONFIG.whatsapp}" target="_blank" rel="noopener">Chat with Leather Bros.</a>
+            </div>
+          </div>
+
+          <div class="contact-map-card">
+            <div>
+              <h3>Visit the showroom</h3>
+              <p>${escapeHTML(CONFIG.address)}</p>
+            </div>
+            <a class="btn" href="${CONFIG.mapUrl}" target="_blank" rel="noopener">Open directions ${icon("arrow")}</a>
+          </div>
+        </section>
+
+        <section class="container form-layout">
+          <aside class="form-side">
+            <div class="eyebrow">Leather Bros.</div>
+            <h2>Good footwear deserves good guidance.</h2>
+            <p>
+              Not sure which style to choose? Need help with sizing or a custom order?
+              Send the team a message with the details and continue the conversation directly.
+            </p>
+            <div class="form-contact-list">
+              <div class="form-contact-item">${icon("pin")}<div><strong>Showroom address</strong><span>${escapeHTML(CONFIG.address)}</span></div></div>
+              <div class="form-contact-item">${icon("phone")}<div><strong>Phone</strong><a href="tel:${CONFIG.phoneTel}">${CONFIG.phoneDisplay}</a></div></div>
+              <div class="form-contact-item">${icon("mail")}<div><strong>Email</strong><a href="mailto:${CONFIG.email}">${CONFIG.email}</a></div></div>
+            </div>
+          </aside>
+
+          <div class="form-panel">
+            <h2>Send an enquiry.</h2>
+            <p>Fill in your details. Your message will be prepared for WhatsApp so you can review it before sending.</p>
+
+            <form id="contact-form">
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="contact-name">Your name *</label>
+                  <input id="contact-name" name="name" required maxlength="80" autocomplete="name" placeholder="Full name">
+                </div>
+                <div class="form-field">
+                  <label for="contact-phone">Phone number *</label>
+                  <input id="contact-phone" name="phone" required maxlength="25" autocomplete="tel" placeholder="01XXXXXXXXX">
+                </div>
+                <div class="form-field full">
+                  <label for="contact-topic">What can we help with? *</label>
+                  <select id="contact-topic" name="topic" required>
+                    <option value="">Choose an enquiry type</option>
+                    <option>Product availability</option>
+                    <option>Size and fit</option>
+                    <option>Custom / bespoke order</option>
+                    <option>Showroom visit</option>
+                    <option>Order assistance</option>
+                    <option>Other enquiry</option>
+                  </select>
+                </div>
+                <div class="form-field full">
+                  <label for="contact-message">Message *</label>
+                  <textarea id="contact-message" name="message" required maxlength="1200" placeholder="Tell us how we can help."></textarea>
+                </div>
+              </div>
+              <p class="form-privacy">This demo does not store or send your form data to a server. It prepares a WhatsApp message for you to review and send.</p>
+              <button class="btn" type="submit">Prepare message ${icon("arrow")}</button>
+            </form>
+          </div>
+        </section>
+      `;
+    }
+
+    function render() {
+      const route = getRoute();
+      const app = document.getElementById("app");
+
+      if (route.page === "home") {
+        app.innerHTML = homePage();
+      } else if (route.page === "shop") {
+        app.innerHTML = shopPage(route.params.get("cat") || "All", false);
+        renderShopGrid(false);
+      } else if (route.page === "wishlist") {
+        app.innerHTML = shopPage("All", true);
+        renderShopGrid(true);
+      } else if (route.page === "product") {
+        app.innerHTML = productPage(route.id);
+      } else if (route.page === "bespoke") {
+        app.innerHTML = bespokePage();
+      } else if (route.page === "contact") {
+        app.innerHTML = contactPage();
+      }
+
+      document.getElementById("mobile-nav").classList.remove("open");
+      updateHeader();
+      renderCartDrawer();
+      bindRouteEvents();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function bindRouteEvents() {
+      const search = document.getElementById("product-search");
+      const sort = document.getElementById("product-sort");
+      const route = getRoute();
+
+      if (search) {
+        search.addEventListener("input", event => {
+          shopState.query = event.target.value;
+          renderShopGrid(route.page === "wishlist");
+        });
+      }
+
+      if (sort) {
+        sort.addEventListener("change", event => {
+          shopState.sort = event.target.value;
+          renderShopGrid(route.page === "wishlist");
+        });
+      }
+
+      const bespokeForm = document.getElementById("bespoke-form");
+      if (bespokeForm) {
+        bespokeForm.addEventListener("submit", handleBespokeSubmit);
+      }
+
+      const contactForm = document.getElementById("contact-form");
+      if (contactForm) {
+        contactForm.addEventListener("submit", handleContactSubmit);
+      }
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => toast.classList.remove("show"), 3200);
+    }
+
+    function toggleWishlist(id) {
+      if (wishlist.includes(id)) {
+        wishlist = wishlist.filter(itemId => itemId !== id);
+        showToast("Removed from your wishlist.");
+      } else {
+        wishlist.push(id);
+        showToast("Saved to your wishlist.");
+      }
+
+      saveStorage();
+      render();
+    }
+
+    function addToCart(id, size = "42", color = "") {
+      const product = productById(id);
+      if (!product) return;
+
+      const selectedColor = color || product.colors[0] || "As shown";
+      const key = `${id}|${size}|${selectedColor}`;
+      const existing = cart.find(item => item.key === key);
+
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          key,
+          id,
+          size: String(size),
+          color: selectedColor,
+          qty: 1
+        });
+      }
+
+      saveStorage();
+      updateHeader();
+      renderCartDrawer();
+      openCart();
+      showToast("Added to your selection. Confirm final details before ordering.");
+    }
+
+    function updateCartQty(key, change) {
+      const item = cart.find(entry => entry.key === key);
+      if (!item) return;
+
+      item.qty += change;
+
+      if (item.qty <= 0) {
+        cart = cart.filter(entry => entry.key !== key);
+      }
+
+      saveStorage();
+      updateHeader();
+      renderCartDrawer();
+    }
+
+    function removeCartItem(key) {
+      cart = cart.filter(item => item.key !== key);
+      saveStorage();
+      updateHeader();
+      renderCartDrawer();
+      showToast("Item removed from your selection.");
+    }
+
+    function cartTotal() {
+      return cart.reduce((sum, item) => {
+        const product = productById(item.id);
+        return sum + (product ? product.price * item.qty : 0);
+      }, 0);
+    }
+
+    function renderCartDrawer() {
+      const body = document.getElementById("cart-body");
+      const footer = document.getElementById("cart-footer");
+
+      if (!body || !footer) return;
+
+      if (!cart.length) {
+        body.innerHTML = `
+          <div class="drawer-empty">
+            ${icon("bag")}
+            <h3>Your selection is empty.</h3>
+            <p>Explore the collection and add a style to begin.</p>
+            <a class="btn" href="#/shop" data-action="cart-close">Explore the collection ${icon("arrow")}</a>
+          </div>
+        `;
+        footer.innerHTML = `
+          <p>Prices and availability shown in this concept must be confirmed with Leather Bros.</p>
+        `;
+        return;
+      }
+
+      body.innerHTML = cart.map(item => {
+        const product = productById(item.id);
+        if (!product) return "";
+
+        return `
+          <div class="cart-item">
+            <a href="#/product/${product.id}" data-action="cart-close">
+              <img src="${product.image}" alt="${escapeHTML(product.name)}" loading="lazy">
+            </a>
+            <div>
+              <h3><a href="#/product/${product.id}" data-action="cart-close">${escapeHTML(product.name)}</a></h3>
+              <small>Size: ${escapeHTML(item.size)}</small>
+              <small>Colour: ${escapeHTML(item.color)}</small>
+              <div class="quantity-control">
+                <button type="button" data-action="qty-change" data-key="${escapeHTML(item.key)}" data-change="-1" aria-label="Reduce quantity">−</button>
+                <span>${item.qty}</span>
+                <button type="button" data-action="qty-change" data-key="${escapeHTML(item.key)}" data-change="1" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="remove-item" type="button" data-action="cart-remove" data-key="${escapeHTML(item.key)}">Remove</button>
+            </div>
+            <div class="cart-item-price">${money(product.price * item.qty)}</div>
+          </div>
+        `;
+      }).join("");
+
+      footer.innerHTML = `
+        <div class="subtotal-line"><span>Preview subtotal</span><span>${money(cartTotal())}</span></div>
+        <p>Delivery charges, product availability, final price and payment arrangements must be confirmed directly. No payment is collected by this demo.</p>
+        <button class="btn" type="button" data-action="whatsapp-cart">Continue on WhatsApp ${icon("arrow")}</button>
+      `;
+    }
+
+    function openCart() {
+      document.getElementById("cart-overlay").classList.add("open");
+      document.getElementById("cart-drawer").classList.add("open");
+      document.getElementById("cart-drawer").setAttribute("aria-hidden", "false");
+      document.body.classList.add("locked");
+    }
+
+    function closeCart() {
+      document.getElementById("cart-overlay").classList.remove("open");
+      document.getElementById("cart-drawer").classList.remove("open");
+      document.getElementById("cart-drawer").setAttribute("aria-hidden", "true");
+      document.body.classList.remove("locked");
+    }
+
+    function openWhatsApp(message) {
+      const url = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    function sendCartToWhatsApp() {
+      if (!cart.length) {
+        showToast("Your selection is empty.");
+        return;
+      }
+
+      const lines = cart.map(item => {
+        const product = productById(item.id);
+        return product
+          ? `• ${product.name} | Size: ${item.size} | Colour: ${item.color} | Qty: ${item.qty} | Preview price: ${money(product.price * item.qty)}`
+          : "";
+      }).filter(Boolean);
+
+      const message = [
+        `Hello ${CONFIG.brand}, I would like to enquire about these selected styles:`,
+        "",
+        ...lines,
+        "",
+        `Preview subtotal: ${money(cartTotal())}`,
+        "",
+        "Please confirm the actual product details, available size, final price, delivery charge and payment method before I place the order."
+      ].join("\n");
+
+      openWhatsApp(message);
+      showToast("WhatsApp opened with your selection. Review the message and send it to confirm.");
+    }
+
+    function handleBespokeSubmit(event) {
+      event.preventDefault();
+
+      const form = new FormData(event.currentTarget);
+      const values = Object.fromEntries(form.entries());
+
+      const message = [
+        `Hello ${CONFIG.brand}, I would like to enquire about a bespoke pair.`,
+        "",
+        `Name: ${values.name}`,
+        `Phone: ${values.phone}`,
+        `Preferred style: ${values.style}`,
+        `Approximate size: ${values.size || "Not sure yet"}`,
+        `Preferred colour: ${values.colour || "To discuss"}`,
+        `Occasion: ${values.occasion || "To discuss"}`,
+        `Additional details: ${values.notes || "None supplied"}`,
+        "",
+        "Please let me know the available options, confirmed price and expected timeline."
+      ].join("\n");
+
+      openWhatsApp(message);
+      showToast("Your bespoke enquiry is ready in WhatsApp. Review and send it to the team.");
+    }
+
+    function handleContactSubmit(event) {
+      event.preventDefault();
+
+      const form = new FormData(event.currentTarget);
+      const values = Object.fromEntries(form.entries());
+
+      const message = [
+        `Hello ${CONFIG.brand}, I have an enquiry.`,
+        "",
+        `Name: ${values.name}`,
+        `Phone: ${values.phone}`,
+        `Enquiry type: ${values.topic}`,
+        `Message: ${values.message}`
+      ].join("\n");
+
+      openWhatsApp(message);
+      showToast("Your message is ready in WhatsApp. Review and send it to the team.");
+    }
+
+    document.addEventListener("click", event => {
+      const actionElement = event.target.closest("[data-action]");
+      if (!actionElement) return;
+
+      const action = actionElement.dataset.action;
+      const id = actionElement.dataset.id;
+
+      if (action === "cart-open") {
+        openCart();
+      }
+
+      if (action === "cart-close") {
+        closeCart();
+      }
+
+      if (action === "menu-toggle") {
+        document.getElementById("mobile-nav").classList.toggle("open");
+      }
+
+      if (action === "wishlist-toggle") {
+        toggleWishlist(id);
+      }
+
+      if (action === "quick-add") {
+        const product = productById(id);
+        if (product) addToCart(id, "42", product.colors[0]);
+      }
+
+      if (action === "detail-add") {
+        const sizeButton = document.querySelector(".size-btn.active");
+        const colorButton = document.querySelector(".color-btn.active");
+        const size = sizeButton ? sizeButton.dataset.size : "42";
+        const color = colorButton ? colorButton.dataset.color : "";
+        addToCart(id, size, color);
+      }
+
+      if (action === "select-size") {
+        document.querySelectorAll(".size-btn").forEach(button => button.classList.remove("active"));
+        actionElement.classList.add("active");
+      }
+
+      if (action === "select-color") {
+        document.querySelectorAll(".color-btn").forEach(button => button.classList.remove("active"));
+        actionElement.classList.add("active");
+      }
+
+      if (action === "gallery-image") {
+        const image = document.getElementById("detail-main-image");
+        if (image) image.src = actionElement.dataset.image;
+
+        document.querySelectorAll(".detail-thumb").forEach(button => button.classList.remove("active"));
+        actionElement.classList.add("active");
+      }
+
+      if (action === "qty-change") {
+        updateCartQty(actionElement.dataset.key, Number(actionElement.dataset.change));
+      }
+
+      if (action === "cart-remove") {
+        removeCartItem(actionElement.dataset.key);
+      }
+
+      if (action === "whatsapp-cart") {
+        sendCartToWhatsApp();
+      }
+
+      if (action === "clear-filters") {
+        shopState.query = "";
+        shopState.category = "All";
+        shopState.sort = "featured";
+
+        const search = document.getElementById("product-search");
+        const sort = document.getElementById("product-sort");
+
+        if (search) search.value = "";
+        if (sort) sort.value = "featured";
+
+        const route = getRoute();
+        if (route.page === "wishlist") {
+          renderShopGrid(true);
+        } else {
+          location.hash = "#/shop";
+        }
+      }
+    });
+
+    window.addEventListener("hashchange", () => {
+      closeCart();
+      render();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeCart();
+        document.getElementById("mobile-nav").classList.remove("open");
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>
